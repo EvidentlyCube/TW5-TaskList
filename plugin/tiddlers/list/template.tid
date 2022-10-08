@@ -1,0 +1,10 @@
+title: $:/plugins/EvidentlyCube/TaskList/list-template
+type: text/vnd.tiddlywiki
+
+\import [[$:/plugins/EvidentlyCube/TaskList/action-init]]
+
+<$list filter="[all[current]field:tl-fields[]]">
+	<$button actions=<<__action-initialize-new-list>>>
+		Initialize a new Task List
+	</$button>
+</$list>

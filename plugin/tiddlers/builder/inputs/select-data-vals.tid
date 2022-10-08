@@ -1,0 +1,18 @@
+title: $:/plugins/EvidentlyCube/TaskList/Builder/Inputs/select-data-vals
+
+<tr>
+	<th>Source tiddler:</th>
+	<td>
+		<$edit-text field="meta-source"/>
+		<p class="hint">Name of the tiddler that contains the data.</p>
+		<$list filter="[all[current]get[meta-source]count[]match[0]]">
+			<p class="error">No source tiddler specified.</p>
+		</$list>
+		<$list filter="[all[current]get[meta-source]!is[tiddler]count[]!match[0]]">
+			<p class="error">The specified source tiddler was not found.</p>
+		</$list>
+		<$list filter="[all[current]get[meta-source]indexes[]count[]match[0]]">
+			<p class="error">The specified source tiddler has no data indexes.</p>
+		</$list>
+	</td>
+</tr>

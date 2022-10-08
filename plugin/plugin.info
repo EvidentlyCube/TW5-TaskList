@@ -1,0 +1,10 @@
+{
+    "title": "$:/plugins/EvidentlyCube/TaskList",
+    "version": "0.0.1",
+    "core-version": ">=5.2.4",
+    "description": "A powerful, customizable and reusable todo list.",
+    "author": "Maurycy Zarzycki",
+    "source": "https://github.com/EvidentlyCube/TW5-TaskList",
+    "plugin-type": "plugin",
+    "list": "readme license history"
+}

@@ -1,0 +1,40 @@
+title: $:/plugins/EvidentlyCube/TaskList/Builder/field-edit
+type: text/vnd.tiddlywiki
+
+
+!! <$text text={{!!caption}}/> <span class="ec_tl-muted">(ID=<$text text={{!!field-name}}/>)</span>
+
+<table class="ec_tl-builder-field-edit">
+<tr>
+	<th>Type</th>
+	<td>
+		<$select field="field-type">
+			<option value="text">Text</option>
+			<option value="hidden-field">Hidden (Field)</option>
+			<option value="hidden-tag">Hidden (Tag)</option>
+			<option value="select-data">Select (Dictionary)</option>
+			<option value="select-data-vals">Select (Dictionary values)</option>
+			<option value="select-list">Select (List)</option>
+		</$select>
+		<p class="hint">
+			<$text text={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/field-type-descriptions]getindex{!!field-type}] }}}/>
+		</p>
+	</td>
+</tr>
+
+<$transclude
+	tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/Inputs/]addsuffix{!!field-type}] }}} />
+
+<tr>
+	<td colspan="2">
+		<$let
+			title-escaped={{{ [all[current]addprefix<ll>addsuffix<rr>] }}}
+
+		>
+		<$button actions=<<action-delete-field>>>
+			Delete field
+		</$button>
+		</$let>
+	</td>
+</tr>
+</table>

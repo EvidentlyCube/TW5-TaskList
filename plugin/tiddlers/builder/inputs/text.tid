@@ -1,0 +1,9 @@
+title: $:/plugins/EvidentlyCube/TaskList/Builder/Inputs/text
+
+<tr>
+	<th>Width</th>
+	<td>
+		<$edit-text field="field-width"/>
+		<p class="hint">Width of the input field in characters.</p>
+	</td>
+</tr>

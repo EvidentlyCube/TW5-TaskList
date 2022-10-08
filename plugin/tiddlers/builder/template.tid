@@ -1,0 +1,71 @@
+title: $:/plugins/EvidentlyCube/TaskList/builder-template
+type: text/vnd.tiddlywiki
+
+\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]]
+
+<$let
+	ll="[["
+	rr="]]"
+	tid=<<currentTiddler>>
+	tid-base={{{ [<tid>removesuffix[.edit]] }}}
+	temp=<<qualify "$:/temp/new-task-data">>
+	field-count={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>count[]] }}}
+>
+<div class="tc-tiddler-frame tc-tiddler-view-frame">
+	<div class="tc-tiddler-title">
+		<div class="tc-titlebar">
+			<span>
+				<h2 class="tc-title">
+					<$text text={{{ [all[current]removesuffix[.edit]] }}}/>
+					<span class="ec_tl-muted"> --- Editing TaskList</span>
+				</h2>
+			</span>
+		</div>
+	</div>
+	<div class="tc-tiddler-body">
+
+		!! Task List info
+
+		 * ''Name:'' <<tid-base>>
+
+		!! Fields editor
+
+		<ul class="ec_tl-builder-fields">
+			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+
+				<li class="ec_tl-builder-field">
+
+					{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
+				</li>
+			</$list>
+		</ul>
+
+		<div class="ec_tl-builder-new-field">
+
+			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
+		</div>
+
+	</div>
+</div>
+</$let>
+
+<!--
+\define action-add-new-field()
+\end
+
+
+\define action-delete-field()
+	<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+\end
+
+<$let
+	ll="[["
+	rr="]]"
+	tid=<currentTiddler>
+
+>
+
+! List fields
+
+</$let>
+-->

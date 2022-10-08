@@ -1,0 +1,13 @@
+title: $:/plugins/EvidentlyCube/TaskList/action-init
+type: text/vnd.tiddlywiki
+
+\define __action-initialize-new-list()
+	<$action-createtiddler
+		$basetitle={{{ [all[current]addsuffix[.edit]] }}}
+		$overwrite="yes"
+		tags="TaskList"
+		tl-draft="1"
+	>
+		<$action-navigate $to=<<createTiddler-title>>/>
+	</$action-createtiddler>
+\end
