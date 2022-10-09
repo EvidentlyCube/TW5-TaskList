@@ -8,6 +8,18 @@ type: text/vnd.tiddlywiki
 		tags="TaskList"
 		tl-draft="1"
 	>
+		<$let
+			content="<<ec-task-list %% 0>>"
+			content-replaced={{{ [<content>search-replace[%%],<tid>] }}}
+		>
+			<$action-setfield
+				$tiddler=<<createTiddler-title>>
+				text=<<content-replaced>>
+				draft.of=<<tid>>
+				draft.title=<<tid>>
+				caption={{{ [<tid>addsuffix[ (TaskList)]] }}}
+			/>
+		</$let>
 		<$action-navigate $to=<<createTiddler-title>>/>
 	</$action-createtiddler>
 	<$action-sendmessage $message="tm-close-tiddler" param=<<currentTiddler>>/>

@@ -9,7 +9,8 @@ type: text/vnd.tiddlywiki
 \end
 
 <$let
-	tid-edit={{{ [all[current]addsuffix[.edit]] }}}
+	tid=<<currentTiddler>>
+	tid-edit={{{ [<tid>addsuffix[.edit]] }}}
 >
 	<$list filter="[<tid-edit>!is[tiddler]]" variable="ignore" emptyMessage="""
 

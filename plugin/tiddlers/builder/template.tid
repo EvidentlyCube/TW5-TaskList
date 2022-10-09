@@ -14,6 +14,15 @@ type: text/vnd.tiddlywiki
 <div class="tc-tiddler-frame tc-tiddler-view-frame">
 	<div class="tc-tiddler-title">
 		<div class="tc-titlebar">
+			<span class="tc-tiddler-controls">
+				<div class=" tc-reveal" hidden="true"></div>
+				<$button class="tc-btn-invisible" tooltip="Discard changes to this TaskList" aria-label="cancel" actions=<<action-cancel-edit>>>
+					{{$:/core/images/cancel-button}}
+				</$button>
+				<$button class="tc-btn-invisible" tooltip="Save changes to this TaskList" aria-label="ok">
+					{{$:/core/images/done-button}}
+				</$button>
+			</span>
 			<span>
 				<h2 class="tc-title">
 					<$text text={{{ [all[current]removesuffix[.edit]] }}}/>
@@ -44,10 +53,6 @@ type: text/vnd.tiddlywiki
 
 			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
 		</div>
-
-		<$button actions=<<action-cancel-edit>>>
-			Cancel
-		</$button>
 	</div>
 </div>
 </$let>
