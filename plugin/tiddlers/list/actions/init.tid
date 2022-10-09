@@ -10,4 +10,5 @@ type: text/vnd.tiddlywiki
 	>
 		<$action-navigate $to=<<createTiddler-title>>/>
 	</$action-createtiddler>
+	<$action-sendmessage $message="tm-close-tiddler" param=<<currentTiddler>>/>
 \end
