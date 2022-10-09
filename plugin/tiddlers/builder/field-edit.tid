@@ -2,12 +2,12 @@ title: $:/plugins/EvidentlyCube/TaskList/Builder/field-edit
 type: text/vnd.tiddlywiki
 
 
-!! <$text text={{!!caption}}/> <span class="ec_tl-muted">(ID=<$text text={{!!field-name}}/>)</span>
-
-<table class="ec_tl-builder-field-edit">
 <tr>
-	<th>Type</th>
 	<td>
+		<$text text={{!!caption}}/> <span class="ec_tl-muted">(<$text text={{!!field-name}}/>)</span>
+	</td>
+	<td class="ec_tl-field-cell">
+		<header>Type:</header>
 		<$select field="field-type">
 			<option value="text">Text</option>
 			<option value="hidden-field">Hidden (Field)</option>
@@ -16,25 +16,26 @@ type: text/vnd.tiddlywiki
 			<option value="select-data-vals">Select (Dictionary values)</option>
 			<option value="select-list">Select (List)</option>
 		</$select>
-		<p class="hint">
+		<p class="ec_tl-hint">
 			<$text text={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/field-type-descriptions]getindex{!!field-type}] }}}/>
 		</p>
 	</td>
-</tr>
-
-<$transclude
-	tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/Inputs/]addsuffix{!!field-type}] }}} />
-
-<tr>
-	<td colspan="2">
+	<$transclude
+		tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/Inputs/]addsuffix{!!field-type}] }}} />
+	<td>
 		<$let
 			title-escaped={{{ [all[current]addprefix<ll>addsuffix<rr>] }}}
-
 		>
-		<$button actions=<<action-delete-field>>>
-			Delete field
-		</$button>
+			<$button class="tc-btn-invisible" tooltip="Delete field" actions=<<action-delete-field>>>
+				{{$:/core/images/cancel-button}}
+			</$button>
 		</$let>
 	</td>
 </tr>
-</table>
+
+
+
+
+<tr>
+
+</tr>

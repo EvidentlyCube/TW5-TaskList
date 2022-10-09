@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 	<$let
 		new-field={{{ [<temp>get[new-field]] }}}
 		new-field-caption={{{ [<temp>get[new-field-caption]] }}}
-		new-title={{{ [<tid>addsuffix[/Field/]addsuffix<new-field-caption>] }}}
+		new-title={{{ [<tid-base>addsuffix[/Field/]addsuffix<new-field-caption>addsuffix[.edit]] }}}
 		is-new-field-empty={{{ [<new-field>match[]then[1]else[0]] }}}
 		is-new-caption-empty={{{ [<new-field-caption>match[]then[1]else[0]] }}}
 		is-unique-field={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>get[field-name]match<new-field>then[1]else[0]] }}}

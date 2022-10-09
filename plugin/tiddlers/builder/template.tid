@@ -1,11 +1,9 @@
 title: $:/plugins/EvidentlyCube/TaskList/builder-template
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]]
+\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-save-edit]]  [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-delete-field]]
 
 <$let
-	ll="[["
-	rr="]]"
 	tid=<<currentTiddler>>
 	tid-base={{{ [<tid>removesuffix[.edit]] }}}
 	temp=<<qualify "$:/temp/new-task-data">>
@@ -19,7 +17,7 @@ type: text/vnd.tiddlywiki
 				<$button class="tc-btn-invisible" tooltip="Discard changes to this TaskList" aria-label="cancel" actions=<<action-cancel-edit>>>
 					{{$:/core/images/cancel-button}}
 				</$button>
-				<$button class="tc-btn-invisible" tooltip="Save changes to this TaskList" aria-label="ok">
+				<$button class="tc-btn-invisible" tooltip="Save changes to this TaskList" aria-label="ok" actions=<<action-save-edit>>>
 					{{$:/core/images/done-button}}
 				</$button>
 			</span>
@@ -39,15 +37,20 @@ type: text/vnd.tiddlywiki
 
 		!! Fields editor
 
-		<ul class="ec_tl-builder-fields">
+		<table class="ec_tl-builder-field-edit">
+		<thead>
+			<tr>
+				<th>Name&nbsp;(ID)</th>
+				<th colspan="3">Field details</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
 			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
-
-				<li class="ec_tl-builder-field">
-
-					{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
-				</li>
+				{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
 			</$list>
-		</ul>
+		</tbody>
+		</table>
 
 		<div class="ec_tl-builder-new-field">
 
@@ -56,24 +59,3 @@ type: text/vnd.tiddlywiki
 	</div>
 </div>
 </$let>
-
-<!--
-\define action-add-new-field()
-\end
-
-
-\define action-delete-field()
-	<$action-deletetiddler $tiddler=<<currentTiddler>>/>
-\end
-
-<$let
-	ll="[["
-	rr="]]"
-	tid=<currentTiddler>
-
->
-
-! List fields
-
-</$let>
--->

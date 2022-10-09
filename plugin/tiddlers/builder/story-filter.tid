@@ -2,4 +2,4 @@ title: $:/plugins/EvidentlyCube/TaskList/builder-story-filter
 tags: $:/tags/StoryTiddlerTemplateFilter
 list-before: $:/config/StoryTiddlerTemplateFilters/draft
 
-[tag[TaskList]field:tl-draft[1]then[$:/plugins/EvidentlyCube/TaskList/builder-template]]
+[tag[TaskList]suffix[.edit]then[$:/plugins/EvidentlyCube/TaskList/builder-template]]

@@ -6,7 +6,6 @@ type: text/vnd.tiddlywiki
 		$basetitle={{{ [all[current]addsuffix[.edit]] }}}
 		$overwrite="yes"
 		tags="TaskList"
-		tl-draft="1"
 	>
 		<$let
 			content="<<ec-task-list %% 0>>"

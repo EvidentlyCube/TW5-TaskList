@@ -1,7 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/list-template
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/EvidentlyCube/TaskList/action-init]]
+\import [[$:/plugins/EvidentlyCube/TaskList/action-init]] [[$:/plugins/EvidentlyCube/TaskList/action-start-edit]]
 
 \define action-reopen-editor()
 	<$action-sendmessage $message="tm-close-tiddler" param=<<currentTiddler>>/>
@@ -11,17 +11,28 @@ type: text/vnd.tiddlywiki
 <$let
 	tid=<<currentTiddler>>
 	tid-edit={{{ [<tid>addsuffix[.edit]] }}}
+	fields-count={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>count[]] }}}
 >
 	<$list filter="[<tid-edit>!is[tiddler]]" variable="ignore" emptyMessage="""
 
 		You're already editing this list - <$button actions=<<action-reopen-editor>>>Open Editor</$button>
 	""">
-		<$list filter="[all[current]tag[TaskList/Field]field:parent<tid>count[]match[0]]" variable="ignore">
+		<$list filter="[<fields-count>match[0]]" variable="ignore">
 			<$button actions=<<__action-initialize-new-list>>>
 				Initialize a new Task List
 			</$button>
 		</$list>
+		<$list filter="[<fields-count>!match[0]]" variable="ignore">
+
+			!! Fields list
+
+			<ul>
+			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+				<li>{{!!caption}}</li>
+			</$list>
+			</ul>
+
+			<$button actions=<<action-start-edit>>>Edit</$button>
+		</$list>
 	</$list>
-
-
 </$let>
