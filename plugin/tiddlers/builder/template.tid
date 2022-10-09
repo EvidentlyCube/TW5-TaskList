@@ -1,7 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/builder-template
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]]
+\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]]
 
 <$let
 	ll="[["
@@ -45,6 +45,9 @@ type: text/vnd.tiddlywiki
 			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
 		</div>
 
+		<$button actions=<<action-cancel-edit>>>
+			Cancel
+		</$button>
 	</div>
 </div>
 </$let>

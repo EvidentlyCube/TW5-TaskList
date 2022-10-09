@@ -11,11 +11,6 @@ TODO:
 		* Open the non-edit tiddler
 	* Rename functionality
 	* Template editing
-	* Cancelling:
-	    * Should delete all temp field tiddlers
-		* Should close the tiddler
-		* Should delete the edit tiddler
-		* Should open the tasklist view tiddler
  * TaskList template:
 	* When no fields and NOT editing should ask to initialize
  * TaskList viewing:

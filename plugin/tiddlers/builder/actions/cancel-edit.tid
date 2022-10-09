@@ -1,0 +1,11 @@
+title: $:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit
+type: text/vnd.tiddlywiki
+
+\define action-cancel-edit()
+	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+		<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+	</$list>
+	<$action-sendmessage $message="tm-close-tiddler" param=<<tid>>/>
+	<$action-deletetiddler $tiddler=<<tid>>/>
+	<$action-navigate $to=<<tid-base>> scroll="yes"/>
+\end
