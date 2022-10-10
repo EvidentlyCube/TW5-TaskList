@@ -13,5 +13,5 @@ TODO:
 	* Add button to edit the list item
 
 QOL:
- * Better styling for the template editor
+ * Better styling for the task input row
  * Better visuals for the default Task List item view

@@ -68,3 +68,13 @@ type: text/vnd.tiddlywiki
 .ec_tl-inputs {
 	display: flex;
 }
+
+.ec_tl-preview-btn {
+	color: <<colour tiddler-link-foreground>>;
+}
+
+.ec_tl-template-edit {
+	width: 100%;
+	resize: vertical;
+	font-family: monospace;
+}

@@ -42,11 +42,13 @@ type: text/vnd.tiddlywiki
 		!! Task template
 
 		<p class="ec_tl-muted">
-			Provide a custom template to use for displaying the task items. Default is used
-			when this is left empty.
+			Provide a custom template to use for displaying the task items. If left empty
+			a default template will be used.
 		</p>
 
-		<$edit-text tiddler=<<tid>> tag="textarea" field="tl-template"/>
+		<$edit-text tiddler=<<tid>> tag="textarea" class="ec_tl-template-edit" field="tl-template"/>
+
+		----
 
 		<$list filter="[<tid>!field:tl-preview[original]]">
 
