@@ -1,7 +1,7 @@
-title: $:/plugins/EvidentlyCube/TaskList/action-start-edit
+title: $:/plugins/EvidentlyCube/TaskList/Actions/core-start-edit
 type: text/vnd.tiddlywiki
 
-\define action-start-edit()
+\define start-edit()
 	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
 		<$action-createtiddler
 			$basetitle={{{ [all[current]addsuffix[.edit]]  }}}
