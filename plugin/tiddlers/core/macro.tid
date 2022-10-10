@@ -12,20 +12,7 @@ tags: $:/tags/Macro
 		is-editable=<<__editable__>>
 		temp=<<qualify "$:/temp/ec-task-list">>
 	>
-		<div class="ec_tasklist">
-
-			 * TID: <<tid>>
-			 * TID BASE: <<tid-base>>
-			* Active Items
-			* Cleared Items
-		</div>
-
-		<div class="ec_tl-inputs">
-			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
-				<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Inputs/]addsuffix{!!field-type}]  }}}/>
-			</$list>
-			<$button class="tc-btn-invisible" actions=<<save-task>>>{{$:/core/images/done-button}}</$button>
-		</div>
+		{{||$:/plugins/EvidentlyCube/TaskList/core-input-row}}
 		<div class="ec_tl-tasks">
 			<ul>
 				<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>]">

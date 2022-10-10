@@ -1,0 +1,29 @@
+title: $:/plugins/EvidentlyCube/TaskList/core-input-row
+type: text/vnd.tiddlywiki
+
+<div class="ec_tl-inputs">
+	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+		<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Inputs/]addsuffix{!!field-type}]  }}}/>
+	</$list>
+
+	<div class="ec_tl-filler"></div>
+
+	<div>
+		<$button
+			class="tc-btn-invisible ec_tl-button"
+			actions=<<save-task>>
+		>
+			{{$:/core/images/done-button}}
+		</$button>
+		<$list filter="[<is-editable>match[1]]">
+			<$importvariables filter="$:/plugins/EvidentlyCube/TaskList/Actions/core-start-edit">
+				<$button
+					class="tc-btn-invisible ec_tl-button"
+					actions=<<start-edit>>
+				>
+					{{$:/core/images/options-button}}
+					</$button>
+			</$importvariables>
+		</$list>
+	</div>
+</div>

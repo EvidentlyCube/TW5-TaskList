@@ -66,7 +66,16 @@ type: text/vnd.tiddlywiki
 }
 
 .ec_tl-inputs {
+	width: 100%;
 	display: flex;
+	gap: 1em;
+	background: #FeFeFe;
+}
+
+.ec_tl-inputs input,
+.ec_tl-inputs select {
+	border: none;
+	border-bottom: 1px solid #888;
 }
 
 .ec_tl-preview-btn {
@@ -77,4 +86,14 @@ type: text/vnd.tiddlywiki
 	width: 100%;
 	resize: vertical;
 	font-family: monospace;
+}
+
+.ec_tl-button svg {
+	fill: <<colour tiddler-controls-foreground>>;
+}
+.ec_tl-button:hover svg {
+	fill: <<colour tiddler-controls-foreground-hover>>;
+}
+.ec_tl-filler {
+	flex-grow: 1;
 }

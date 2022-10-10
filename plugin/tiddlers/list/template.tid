@@ -24,17 +24,7 @@ type: text/vnd.tiddlywiki
 		</$list>
 		<$list filter="[<fields-count>!match[0]]" variable="ignore">
 
-			!! Fields list
-
-			<ul>
-			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
-				<li>{{!!caption}}</li>
-			</$list>
-			</ul>
-
-			<$macrocall $name="ec-task-list" tiddler=<<currentTiddler>>/>
-
-			<$button actions=<<action-start-edit>>>Edit</$button>
+			<$macrocall $name="ec-task-list" tiddler=<<currentTiddler>> editable="1"/>
 		</$list>
 	</$list>
 </$let>
