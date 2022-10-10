@@ -14,32 +14,10 @@ type: text/vnd.tiddlywiki
 	field-count={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>count[]] }}}
 >
 <div class="tc-tiddler-frame tc-tiddler-view-frame">
-	<div class="tc-tiddler-title">
-		<div class="tc-titlebar">
-			<span class="tc-tiddler-controls">
-				<div class=" tc-reveal" hidden="true"></div>
-				<$button class="tc-btn-invisible" tooltip="Discard changes to this TaskList" aria-label="cancel" actions=<<action-cancel-edit>>>
-					{{$:/core/images/cancel-button}}
-				</$button>
-				<$button class="tc-btn-invisible" tooltip="Save changes to this TaskList" aria-label="ok" actions=<<action-save-edit>>>
-					{{$:/core/images/done-button}}
-				</$button>
-			</span>
-			<span>
-				<h2 class="tc-title">
-					<$text text={{{ [all[current]removesuffix[.edit]] }}}/>
-					<span class="ec_tl-muted"> --- Editing TaskList</span>
-				</h2>
-			</span>
-		</div>
-	</div>
+	{{||$:/plugins/EvidentlyCube/TaskList/builder-header-bar}}
 	<div class="tc-tiddler-body">
 
-		!! Task List info
-
-		 * ''Name:'' <<tid-base>>
-
-		!! Fields editor
+ 		!! Fields editor
 
 		<table class="ec_tl-builder-field-edit">
 		<thead>
