@@ -3,6 +3,10 @@ type: text/vnd.tiddlywiki
 
 \import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-save-edit]]  [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-delete-field]]
 
+\define toggle-preview()
+	<$action-setfield tiddler=<<tid>> tl-preview={{{ [<tid>field:tl-preview[original]then[new]else[original]] }}} />
+\end
+
 <$let
 	tid=<<currentTiddler>>
 	tid-base={{{ [<tid>removesuffix[.edit]] }}}
@@ -57,13 +61,33 @@ type: text/vnd.tiddlywiki
 			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
 		</div>
 
-		!! Preview
+		!! Task template
 
-		<$macrocall $name="ec-task-list" tiddler=<<tid>>/>
+		<p class="ec_tl-muted">
+			Provide a custom template to use for displaying the task items. Default is used
+			when this is left empty.
+		</p>
 
-		!! Preview (original)
+		<$edit-text tiddler=<<tid>> tag="textarea" field="tl-template"/>
 
-		<$macrocall $name="ec-task-list" tiddler=<<tid-base>>/>
+		<$list filter="[<tid>!field:tl-preview[original]]">
+
+			!! Preview (new | <$button actions=<<toggle-preview>> class="tc-btn-invisible ec_tl-preview-btn">original</$button>)
+
+			<p class="ec_tl-muted">Currently previewing edited version of the Task List.</p>
+
+			<$macrocall $name="ec-task-list" tiddler=<<tid>>/>
+		</$list>
+
+
+		<$list filter="[<tid>field:tl-preview[original]]">
+
+			!! Preview (<$button actions=<<toggle-preview>> class="tc-btn-invisible ec_tl-preview-btn">new</$button> | original)
+
+			<p class="ec_tl-muted">Currently previewing the version of the Task List without any changes.</p>
+
+			<$macrocall $name="ec-task-list" tiddler=<<tid-base>>/>
+		</$list>
 	</div>
 </div>
 </$let>
