@@ -4,16 +4,18 @@ tags: $:/tags/Macro
 
 \define ec-task-list(tiddler editable:0)
 	<$importvariables
-		filter="[tag[mySpecialMacros]]"
+		filter="[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-task]]"
 	>
 	<$let
 		tid=<<__tiddler__>>
+		tid-base={{{ [<tid>removesuffix[.edit]else<tid>] }}}
 		is-editable=<<__editable__>>
 		temp=<<qualify "$:/temp/ec-task-list">>
 	>
 		<div class="ec_tasklist">
 
-			* Inputs for <<tiddler>>
+			 * TID: <<tid>>
+			 * TID BASE: <<tid-base>>
 			* Active Items
 			* Cleared Items
 		</div>
@@ -22,7 +24,16 @@ tags: $:/tags/Macro
 			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
 				<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Inputs/]addsuffix{!!field-type}]  }}}/>
 			</$list>
-			<$button actions=<<save-field>>>{{$:/core/images/done-button}}</$button>
+			<$button class="tc-btn-invisible" actions=<<save-task>>>{{$:/core/images/done-button}}</$button>
+		</div>
+		<div class="ec_tl-tasks">
+			<ul>
+				<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>]">
+					<li>
+						{{||$:/plugins/EvidentlyCube/TaskList/core-item}}
+					</li>
+				</$list>
+			</ul>
 		</div>
 	</$let>
 	</$importvariables>

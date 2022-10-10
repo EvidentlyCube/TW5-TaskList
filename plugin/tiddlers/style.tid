@@ -64,3 +64,7 @@ type: text/vnd.tiddlywiki
 .ec_tl-field-cell {
 	vertical-align: top;
 }
+
+.ec_tl-inputs {
+	display: flex;
+}
