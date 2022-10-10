@@ -70,6 +70,7 @@ type: text/vnd.tiddlywiki
 	display: flex;
 	gap: 1em;
 	background: #FeFeFe;
+	margin-bottom: 0.3em;
 }
 
 .ec_tl-inputs input,
@@ -89,9 +90,11 @@ type: text/vnd.tiddlywiki
 	font-family: monospace;
 }
 
-button.ec_tl-button svg {
+.ec_tl-inputs .ec_tl-button svg {
 	width: 1.5em;
 	height: 1.5em;
+}
+button.ec_tl-button svg {
 	fill: <<colour tiddler-controls-foreground>>;
 }
 .ec_tl-button:hover svg {
@@ -99,4 +102,30 @@ button.ec_tl-button svg {
 }
 .ec_tl-filler {
 	flex-grow: 1;
+}
+
+.ec_tl-task {
+	display: flex;
+	align-items: center;
+	gap: 0.3em;
+	padding: 0 0.5em;
+}
+.ec_tl-task.ec_tl-checked {
+	text-decoration: line-through;
+}
+.ec_tl-task:hover {
+	background: rgb(128,128,256, 0.05);
+}
+.ec_tl-task:hover .ec_tl-button svg {
+	fill: <<colour tiddler-controls-foreground-hover>>;
+}
+.ec_tl-check {
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.ec_tl-check input {
+	width: 16px;
+	height: 16px;
+	vertical-align: baseline;
 }

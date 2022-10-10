@@ -1,20 +1,21 @@
 title: $:/plugins/EvidentlyCube/TaskList/core-item
 type: text/vnd.tiddlywiki
 
-<div style="display: flex;">
-	<$checkbox field="_is-done" checked="1" />
+<div class={{{ [all[current]field:_is-done[1]then[ec_tl-checked]] [[ec_tl-task]] +[join[ ]] }}}>
+	<$checkbox field="_is-done" checked="1" class="ec_tl-check" />
 
-	<$list filter="[<tid>field:tl-template[]]" emptyMessage={{{ [<tid>get[tl-template]] }}} variable="ignore">
-		<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]" variable="field">
-			<$let field-name={{{ [<field>get[field-name]] }}}>
-				{{{ [all[current]get<field-name>] }}} ---
-			</$let>
+	<div class="ec_tl-task-template">
+		<$list filter="[<tid>field:tl-template[]]" emptyMessage={{{ [<tid>get[tl-template]] }}} variable="ignore">
+			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]" variable="field">
+				<$let field-name={{{ [<field>get[field-name]] }}}>
+					{{{ [all[current]get<field-name>] }}} ---
+				</$let>
+			</$list>
 		</$list>
-	</$list>
-
+	</div>
 
 	<div style="flex-grow: 1"></div>
-	<$button class="tc-btn-invisible">
+	<$button class="tc-btn-invisible ec_tl-button">
 		<$action-deletetiddler $tiddler=<<currentTiddler>>/>
 		{{$:/core/images/close-button}}
 	</$button>
