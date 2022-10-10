@@ -1,0 +1,29 @@
+title: $:/plugins/EvidentlyCube/TaskList/core-macro
+type: text/vnd.tiddlywiki
+tags: $:/tags/Macro
+
+\define ec-task-list(tiddler editable:0)
+	<$importvariables
+		filter="[tag[mySpecialMacros]]"
+	>
+	<$let
+		tid=<<__tiddler__>>
+		is-editable=<<__editable__>>
+		temp=<<qualify "$:/temp/ec-task-list">>
+	>
+		<div class="ec_tasklist">
+
+			* Inputs for <<tiddler>>
+			* Active Items
+			* Cleared Items
+		</div>
+
+		<div class="ec_tl-inputs">
+			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+				<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Inputs/]addsuffix{!!field-type}]  }}}/>
+			</$list>
+			<$button actions=<<save-field>>>{{$:/core/images/done-button}}</$button>
+		</div>
+	</$let>
+	</$importvariables>
+\end

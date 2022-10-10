@@ -1,0 +1,13 @@
+title: $:/plugins/EvidentlyCube/TaskList/Actions/core-save-task
+type: text/vnd.tiddlywiki
+
+\define save-task()
+	<$let
+
+	>
+		<!-- Save a new tiddler-->
+			<!-- Store fields - execute a separate action per field -->
+			<!-- Clear inputs -->
+
+	</$let>
+\end

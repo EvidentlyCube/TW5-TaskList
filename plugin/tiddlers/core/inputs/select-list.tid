@@ -1,0 +1,8 @@
+title: $:/plugins/EvidentlyCube/TaskList/Inputs/select-list
+type: text/vnd.tiddlywiki
+
+<$select tiddler=<<temp>> field={{!!field-name}}>
+	<$list filter="[list{!!meta-source}]" variable="item">
+		<option value=<<item>>><$text text=<<item>> /></option>
+	</$list>
+</$select>

@@ -32,6 +32,8 @@ type: text/vnd.tiddlywiki
 			</$list>
 			</ul>
 
+			<$macrocall $name="ec-task-list" tiddler=<<currentTiddler>>/>
+
 			<$button actions=<<action-start-edit>>>Edit</$button>
 		</$list>
 	</$list>

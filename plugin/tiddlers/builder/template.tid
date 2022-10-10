@@ -56,6 +56,14 @@ type: text/vnd.tiddlywiki
 
 			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
 		</div>
+
+		!! Preview
+
+		<$macrocall $name="ec-task-list" tiddler=<<tid>>/>
+
+		!! Preview (original)
+
+		<$macrocall $name="ec-task-list" tiddler=<<tid-base>>/>
 	</div>
 </div>
 </$let>

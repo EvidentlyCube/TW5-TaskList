@@ -4,8 +4,8 @@ type: text/vnd.tiddlywiki
 <$edit-text
 	tag="input"
 	default=""
-	tiddler=<<__target__>>
-	field=<<field>>
-	size=<<size>>
-	placeholder=<<desc>>
+	tiddler=<<temp>>
+	field={{!!field-name}}
+	size={{!!field-width}}
+	placeholder={{!!caption}}
 />
