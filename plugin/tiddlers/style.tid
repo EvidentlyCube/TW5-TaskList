@@ -76,6 +76,7 @@ type: text/vnd.tiddlywiki
 .ec_tl-inputs select {
 	border: none;
 	border-bottom: 1px solid #888;
+	flex-grow: 1;
 }
 
 .ec_tl-preview-btn {
@@ -88,7 +89,9 @@ type: text/vnd.tiddlywiki
 	font-family: monospace;
 }
 
-.ec_tl-button svg {
+button.ec_tl-button svg {
+	width: 1.5em;
+	height: 1.5em;
 	fill: <<colour tiddler-controls-foreground>>;
 }
 .ec_tl-button:hover svg {
