@@ -14,7 +14,13 @@ tags: $:/tags/Macro
 	>
 		{{||$:/plugins/EvidentlyCube/TaskList/core-input-row}}
 		<div class="ec_tl-tasks">
-			<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>]">
+			<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>!field:_is-done[1]]">
+				{{||$:/plugins/EvidentlyCube/TaskList/core-item}}
+			</$list>
+		</div>
+
+		<div class="ec_tl-tasks">
+			<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>field:_is-done[1]]">
 				{{||$:/plugins/EvidentlyCube/TaskList/core-item}}
 			</$list>
 		</div>

@@ -104,6 +104,10 @@ button.ec_tl-button svg {
 	flex-grow: 1;
 }
 
+.ec_tl-tasks {
+	margin-bottom: 1em;
+}
+
 .ec_tl-task {
 	display: flex;
 	align-items: center;
