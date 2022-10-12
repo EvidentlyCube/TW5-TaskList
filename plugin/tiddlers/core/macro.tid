@@ -4,7 +4,7 @@ tags: $:/tags/Macro
 
 \define ec-task-list(tiddler editable:0)
 	<$importvariables
-		filter="[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-task]]"
+		filter="[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-item]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-item-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-edited-item]]"
 	>
 	<$let
 		tid=<<__tiddler__>>
@@ -15,13 +15,17 @@ tags: $:/tags/Macro
 		{{||$:/plugins/EvidentlyCube/TaskList/core-input-row}}
 		<div class="ec_tl-tasks">
 			<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>!field:_is-done[1]]">
-				{{||$:/plugins/EvidentlyCube/TaskList/core-item}}
+				<$transclude tiddler={{{
+					[all[current]field:_is-editing[1]then[$:/plugins/EvidentlyCube/TaskList/core-item-edit]else[$:/plugins/EvidentlyCube/TaskList/core-item]]
+				}}}/>
 			</$list>
 		</div>
 
 		<div class="ec_tl-tasks">
 			<$list filter="[all[tiddlers]tag[TaskList/Item]field:parent<tid-base>field:_is-done[1]]">
-				{{||$:/plugins/EvidentlyCube/TaskList/core-item}}
+				<$transclude tiddler={{{
+					[all[current]field:_is-editing[1]then[$:/plugins/EvidentlyCube/TaskList/core-item-edit]else[$:/plugins/EvidentlyCube/TaskList/core-item]]
+				}}}/>
 			</$list>
 		</div>
 	</$let>

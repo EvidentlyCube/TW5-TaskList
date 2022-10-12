@@ -1,7 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/list-template
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/EvidentlyCube/TaskList/action-init]] [[$:/plugins/EvidentlyCube/TaskList/action-start-edit]]
+\import [[$:/plugins/EvidentlyCube/TaskList/action-init]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-tasklist-edit]]
 
 \define action-reopen-editor()
 	<$action-sendmessage $message="tm-close-tiddler" param=<<currentTiddler>>/>

@@ -69,12 +69,10 @@ type: text/vnd.tiddlywiki
 	width: 100%;
 	display: flex;
 	gap: 1em;
-	background: #FeFeFe;
-	margin-bottom: 0.3em;
 }
 
-.ec_tl-inputs input,
-.ec_tl-inputs select {
+input.ec_tl-input,
+select.ec_tl-input {
 	border: none;
 	border-bottom: 1px solid #888;
 	flex-grow: 1;
@@ -90,6 +88,9 @@ type: text/vnd.tiddlywiki
 	font-family: monospace;
 }
 
+.ec_tl-button {
+	flex-shrink: 0;
+}
 .ec_tl-inputs .ec_tl-button svg {
 	width: 1.5em;
 	height: 1.5em;
@@ -132,4 +133,8 @@ button.ec_tl-button svg {
 	width: 16px;
 	height: 16px;
 	vertical-align: baseline;
+}
+
+.ec_tl-task-editing {
+	margin: 0.2em 0;
 }

@@ -1,0 +1,19 @@
+title: $:/plugins/EvidentlyCube/TaskList/core-item-edit
+type: text/vnd.tiddlywiki
+
+<$let temp={{{ [[$:/temp/tasklist/]addsuffix<currentTiddler>] }}}>
+	<div class={{{ [all[current]field:_is-done[1]then[ec_tl-checked]] [[ec_tl-task-editing]] [[ec_tl-task]] +[join[ ]] }}}>
+		<span class="ec_tl-muted">Editing</span>
+
+		{{||$:/plugins/EvidentlyCube/TaskList/core-input-fields}}
+
+		<$button class="tc-btn-invisible ec_tl-button">
+			<$action-setfield _is-editing="0"/>
+			{{$:/core/images/cancel-button}}
+		</$button>
+		<$button class="tc-btn-invisible ec_tl-button" actions=<<save-edited-item>>>
+			{{$:/core/images/done-button}}
+		</$button>
+</div>
+</$let>
+

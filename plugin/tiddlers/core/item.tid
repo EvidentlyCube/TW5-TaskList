@@ -15,6 +15,9 @@ type: text/vnd.tiddlywiki
 	</div>
 
 	<div style="flex-grow: 1"></div>
+	<$button class="tc-btn-invisible ec_tl-button" actions=<<action-start-item-edit>>>
+		{{$:/core/images/edit-button}}
+	</$button>
 	<$button class="tc-btn-invisible ec_tl-button">
 		<$action-deletetiddler $tiddler=<<currentTiddler>>/>
 		{{$:/core/images/close-button}}
