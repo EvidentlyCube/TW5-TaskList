@@ -11,7 +11,7 @@ type: text/vnd.tiddlywiki
 	tid=<<currentTiddler>>
 	tid-base={{{ [<tid>removesuffix[.edit]] }}}
 	temp=<<qualify "$:/temp/new-task-data">>
-	next-priority={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>get[priority]max[]add[1]else[1]] }}}
+	next-priority={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>get[priority]maxall[]add[1]else[1]] }}}
 >
 <div class="tc-tiddler-frame tc-tiddler-view-frame">
 	{{||$:/plugins/EvidentlyCube/TaskList/builder-header-bar}}
