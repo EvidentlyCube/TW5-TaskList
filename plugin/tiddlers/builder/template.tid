@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 \import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-save-edit]]  [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-delete-field]]
 
 \define toggle-preview()
-	<$action-setfield tiddler=<<tid>> tl-preview={{{ [<tid>field:tl-preview[original]then[new]else[original]] }}} />
+	<$action-setfield $tiddler=<<tid>> tl-preview={{{ [<tid>field:tl-preview[original]then[new]else[original]] }}} />
 \end
 
 <$let
@@ -17,36 +17,10 @@ type: text/vnd.tiddlywiki
 	{{||$:/plugins/EvidentlyCube/TaskList/builder-header-bar}}
 	<div class="tc-tiddler-body">
 
- 		!! Fields editor
-
-		<table class="ec_tl-builder-field-edit">
-		<thead>
-			<tr>
-				<th>Name&nbsp;(ID)</th>
-				<th colspan="3">Field details</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
-				{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
-			</$list>
-		</tbody>
-		</table>
-
-		<div class="ec_tl-builder-new-field">
-
-			{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
-		</div>
-
-		!! Task template
-
-		<p class="ec_tl-muted">
-			Provide a custom template to use for displaying the task items. If left empty
-			a default template will be used.
-		</p>
-
-		<$edit-text tiddler=<<tid>> tag="textarea" class="ec_tl-template-edit" field="tl-template"/>
+		<<tabs
+			"$:/plugins/EvidentlyCube/TaskList/builder-template-fields $:/plugins/EvidentlyCube/TaskList/builder-template-task-view $:/plugins/EvidentlyCube/TaskList/builder-template-sorting"
+			"$:/plugins/EvidentlyCube/TaskList/builder-template-fields"
+			"$:/temp/task-list">>
 
 		----
 

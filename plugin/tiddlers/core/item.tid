@@ -6,9 +6,10 @@ type: text/vnd.tiddlywiki
 
 	<div class="ec_tl-task-template">
 		<$list filter="[<tid>field:tl-template[]]" emptyMessage={{{ [<tid>get[tl-template]] }}} variable="ignore">
-			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]" variable="field">
+			<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]" variable="field" counter="field-counter">
 				<$let field-name={{{ [<field>get[field-name]] }}}>
-					{{{ [all[current]get<field-name>] }}} ---
+					<$list filter="[<field-counter-first>match[no]]">---</$list>
+					<$text text={{{ [all[current]get<field-name>else[n/a]] }}}/>
 				</$let>
 			</$list>
 		</$list>

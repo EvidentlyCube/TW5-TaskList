@@ -1,0 +1,25 @@
+title: $:/plugins/EvidentlyCube/TaskList/builder-template-fields
+type: text/vnd.tiddlywiki
+caption: Fields
+
+!! Fields editor
+
+<table class="ec_tl-builder-field-edit">
+<thead>
+	<tr>
+		<th>Name&nbsp;(ID)</th>
+		<th colspan="3">Field details</th>
+		<th>Actions</th>
+	</tr>
+</thead>
+<tbody>
+	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+		{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
+	</$list>
+</tbody>
+</table>
+
+<div class="ec_tl-builder-new-field">
+
+	{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
+</div>

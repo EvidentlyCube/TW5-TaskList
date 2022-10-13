@@ -1,0 +1,12 @@
+title: $:/plugins/EvidentlyCube/TaskList/builder-template-task-view
+type: text/vnd.tiddlywiki
+caption: Template
+
+!! Task template
+
+<p class="ec_tl-muted">
+	Provide a custom template to use for displaying the task items. If left empty
+	a default template will be used.
+</p>
+
+<$edit-text tiddler=<<tid>> tag="textarea" class="ec_tl-template-edit" field="tl-template"/>
