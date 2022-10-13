@@ -41,7 +41,7 @@ type: text/vnd.tiddlywiki
 			text="Make an apple pie"
 		/>
 		<$action-createtiddler
-			$basetitle={{{ [<tid-base>addsuffix[/Item]]  }}}
+			$basetitle={{{ [<currentTiddler>addsuffix[/Item]]  }}}
 			tags="TaskList/Item"
 			parent=<<currentTiddler>>
 			text="Buy groceries"
