@@ -24,7 +24,7 @@ type: text/vnd.tiddlywiki
 			$basetitle=<<new-title>>
 			tags="TaskList/Field"
 			parent=<<tid>>
-			priority=<<field-count>>
+			priority=<<next-priority>>
 			caption=<<new-field-caption>>
 			field-name=<<new-field>>
 			field-type="text"

@@ -54,7 +54,7 @@ caption: Sorting
 !! Sorting
 
 <p class="ec_tl-muted">
-	Define how the items in the task list are sorted.
+	In what order should the items in the task list appear?
 </p>
 
 <table>

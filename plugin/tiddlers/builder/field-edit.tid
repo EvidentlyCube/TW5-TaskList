@@ -1,10 +1,9 @@
 title: $:/plugins/EvidentlyCube/TaskList/Builder/field-edit
 type: text/vnd.tiddlywiki
 
-
 <tr>
-	<td>
-		<$text text={{!!caption}}/> <span class="ec_tl-muted">(<$text text={{!!field-name}}/>)</span>
+	<td style="text-align: center;">
+		<$text text={{!!caption}}/> <span class="ec_tl-muted"><br>(<$text text={{!!field-name}}/>)</span>
 	</td>
 	<td class="ec_tl-field-cell">
 		<header>Type:</header>
@@ -22,10 +21,14 @@ type: text/vnd.tiddlywiki
 	</td>
 	<$transclude
 		tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Builder/Inputs/]addsuffix{!!field-type}] }}} />
-	<td>
-		<$let
-			title-escaped={{{ [all[current]addprefix<ll>addsuffix<rr>] }}}
-		>
+	<td style="white-space:nowrap;">
+		<$let title-escaped={{{ [all[current]addprefix<ll>addsuffix<rr>] }}}>
+			<$button class="tc-btn-invisible" tooltip="Move field up" actions=<<action-move-field-up>>>
+				{{$:/core/images/up-arrow}}
+			</$button>
+			<$button class="tc-btn-invisible" tooltip="Move field down" actions=<<action-move-field-down>>>
+				{{$:/core/images/down-arrow}}
+			</$button>
 			<$button class="tc-btn-invisible" tooltip="Delete field" actions=<<action-delete-field>>>
 				{{$:/core/images/cancel-button}}
 			</$button>

@@ -1,7 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/builder-template
 type: text/vnd.tiddlywiki
 
-\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-save-edit]]  [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-delete-field]]
+\import [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-add-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-save-edit]]  [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-cancel-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-delete-field]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-move-field-up]] [[$:/plugins/EvidentlyCube/TaskList/Actions/builder-move-field-down]]
 
 \define toggle-preview()
 	<$action-setfield $tiddler=<<tid>> tl-preview={{{ [<tid>field:tl-preview[original]then[new]else[original]] }}} />
@@ -11,7 +11,7 @@ type: text/vnd.tiddlywiki
 	tid=<<currentTiddler>>
 	tid-base={{{ [<tid>removesuffix[.edit]] }}}
 	temp=<<qualify "$:/temp/new-task-data">>
-	field-count={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>count[]] }}}
+	next-priority={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>get[priority]max[]add[1]else[1]] }}}
 >
 <div class="tc-tiddler-frame tc-tiddler-view-frame">
 	{{||$:/plugins/EvidentlyCube/TaskList/builder-header-bar}}

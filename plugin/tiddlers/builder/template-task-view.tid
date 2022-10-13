@@ -5,8 +5,7 @@ caption: Template
 !! Task template
 
 <p class="ec_tl-muted">
-	Provide a custom template to use for displaying the task items. If left empty
-	a default template will be used.
+	How do you want items in the task list to look? A default template is used if you leave this empty.
 </p>
 
 <$edit-text tiddler=<<tid>> tag="textarea" class="ec_tl-template-edit" field="tl-template"/>

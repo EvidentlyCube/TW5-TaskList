@@ -4,6 +4,10 @@ caption: Fields
 
 !! Fields editor
 
+<p class="ec_tl-muted">
+	What fields do you want to have in this task list?
+</p>
+
 <table class="ec_tl-builder-field-edit">
 <thead>
 	<tr>
@@ -13,7 +17,7 @@ caption: Fields
 	</tr>
 </thead>
 <tbody>
-	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
+	<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>nsort[priority]]">
 		{{||$:/plugins/EvidentlyCube/TaskList/Builder/field-edit}}
 	</$list>
 </tbody>

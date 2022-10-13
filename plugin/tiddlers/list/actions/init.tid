@@ -28,7 +28,7 @@ type: text/vnd.tiddlywiki
 			$basetitle={{{ [<currentTiddler>addsuffix[/Field/Text.edit]] }}}
 			tags="TaskList/Field"
 			parent=<<createTiddler-title>>
-			priority=0
+			priority=1
 			caption="Text"
 			field-name="text"
 			field-type="text"
