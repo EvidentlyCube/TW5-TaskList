@@ -69,6 +69,7 @@ type: text/vnd.tiddlywiki
 	width: 100%;
 	display: flex;
 	gap: 1em;
+	margin-bottom: 0.5em;
 }
 
 .ec_tl-inputs div:last-child {
