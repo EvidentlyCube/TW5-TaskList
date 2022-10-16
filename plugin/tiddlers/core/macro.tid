@@ -2,14 +2,14 @@ title: $:/plugins/EvidentlyCube/TaskList/core-macro
 type: text/vnd.tiddlywiki
 tags: $:/tags/Macro
 
-\define ec-task-list(tiddler editable:0)
+\define ec-task-list(tiddler)
 	<$importvariables
 		filter="[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-item]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-item-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-edited-item]]"
 	>
 	<$let
+		currentTiddler=<<__tiddler__>>
 		tid=<<__tiddler__>>
 		tid-base={{{ [<tid>removesuffix[.edit]else<tid>] }}}
-		is-editable=<<__editable__>>
 		temp=<<qualify "$:/temp/ec-task-list">>
 	>
 		{{||$:/plugins/EvidentlyCube/TaskList/core-input-row}}
