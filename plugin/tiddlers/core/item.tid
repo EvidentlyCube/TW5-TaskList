@@ -1,7 +1,8 @@
 title: $:/plugins/EvidentlyCube/TaskList/core-item
 type: text/vnd.tiddlywiki
 
-<div class={{{ [all[current]field:_is-done[1]then[ec_tl-checked]] [[ec_tl-task]] +[join[ ]] }}}>
+<$let css-class-filter={{{ [<tid>get[tl-class-filter]] }}}>
+<div class={{{ [all[current]field:_is-done[1]then[ec_tl-checked]] [subfilter<css-class-filter>] [[ec_tl-task]] +[join[ ]] }}}>
 	<$checkbox field="_is-done" checked="1" class="ec_tl-check" />
 
 	<div class="ec_tl-task-template">
@@ -24,3 +25,4 @@ type: text/vnd.tiddlywiki
 		{{$:/core/images/close-button}}
 	</$button>
 </div>
+</$let>
