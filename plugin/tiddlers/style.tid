@@ -71,6 +71,11 @@ type: text/vnd.tiddlywiki
 	gap: 1em;
 }
 
+.ec_tl-inputs div:last-child {
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
 input.ec_tl-input,
 select.ec_tl-input {
 	border: none;
