@@ -76,8 +76,18 @@ select.ec_tl-input {
 	border: none;
 	border-bottom: 1px solid #888;
 	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 0;
 }
 
+select.ec_tl-input option {
+	color: black;
+}
+
+select.ec_tl-input option:first-child,
+.ec_tl-input.ec_tl-placeholder {
+	color: #888;
+}
 .ec_tl-preview-btn {
 	color: <<colour tiddler-link-foreground>>;
 }
