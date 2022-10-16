@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 		tags="TaskList"
 	>
 		<$let
-			content="<<ec-task-list %% 0>>"
+			content='<<ec-task-list "%%" 0>>'
 			content-replaced={{{ [<content>search-replace[%%],<tid>] }}}
 		>
 			<$action-setfield
