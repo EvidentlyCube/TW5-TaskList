@@ -1,10 +1,9 @@
 title: $:/plugins/EvidentlyCube/TaskList/Actions/core-save-edited-item
 type: text/vnd.tiddlywiki
 
-\define save-edited-item()
+\define action-save-edited-item()
 	<$let item-tid=<<currentTiddler>>>
 		<$action-setfield _is-editing="0"/>
-		<$action-log $$message="save-edited-item" temp=<<temp>> tid=<<tid>> item-tid=<<item-tid>> fields={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>join[,]] }}} />
 		<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
 			<$action-log $$message="About to run save field" self=<<currentTiddler>> field={{!!field-type}}/>
 			<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-field-]addsuffix{!!field-type}] }}}/>
