@@ -8,5 +8,4 @@ type: text/vnd.tiddlywiki
 	</$list>
 	<$action-sendmessage $message="tm-close-tiddler" param=<<tid>>/>
 	<$action-deletetiddler $tiddler=<<tid>>/>
-	<$action-navigate $to=<<tid-base>> scroll="yes"/>
 \end

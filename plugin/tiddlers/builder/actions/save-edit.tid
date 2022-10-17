@@ -27,5 +27,4 @@ type: text/vnd.tiddlywiki
 		from=<<tid>>
 		to=<<tid-base>>
 	/>
-	<$action-navigate $to=<<tid-base>> $scroll="yes"/>
 \end

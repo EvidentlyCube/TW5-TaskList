@@ -4,11 +4,18 @@ tags: $:/tags/Macro
 
 \define ec-task-list(tiddler)
 	<$importvariables
-		filter="[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-item]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-item-edit]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-edited-item]] [[$:/plugins/EvidentlyCube/TaskList/Actions/core-cancel-item-edit]]"
+		filter="
+			[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-item]]
+			[[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-item-edit]]
+			[[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-edited-item]]
+			[[$:/plugins/EvidentlyCube/TaskList/Actions/core-cancel-item-edit]]
+			[[$:/plugins/EvidentlyCube/TaskList/Actions/core-start-tasklist-edit]]
+		"
 	>
 	<$let
 		currentTiddler=<<__tiddler__>>
 		tid=<<__tiddler__>>
+		tid-edit={{{ [<tid>addsuffix[.edit]] }}}
 		tid-base={{{ [<tid>removesuffix[.edit]else<tid>] }}}
 		temp=<<qualify "$:/temp/ec-task-list">>
 	>
