@@ -1,6 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.3'' -- Table for sorting options now takes whole width and has larger input
 * ''1.0.2'' -- Fixed a bug where it was impossible to edit a task list outside its tiddler
 * ''1.0.1'' -- Fixed an error being triggered when using `zoomin` story view
 * ''1.0.0'' -- Official release

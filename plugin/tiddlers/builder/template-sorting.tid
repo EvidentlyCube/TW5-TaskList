@@ -57,12 +57,16 @@ caption: Sorting
 	In what order should the items in the task list appear?
 </p>
 
-<table>
+<table style="width: 100%">
+<colgroup>
+	<col style="width: 250px">
+	<col>
+</colgroup>
 <tbody>
 	<tr>
 		<td>
-			<$radio tiddler=<<tid>> field="tl-sort-mode" value="ascending" actions=<<action-rebuild-sorting-filters>>>Simple Ascending</$radio><br>
-			<$radio tiddler=<<tid>> field="tl-sort-mode" value="descending" actions=<<action-rebuild-sorting-filters>>>Simple Descending</$radio>
+			<$radio tiddler=<<tid>> field="tl-sort-mode" value="ascending" actions=<<action-rebuild-sorting-filters>>> Simple Ascending</$radio><br>
+			<$radio tiddler=<<tid>> field="tl-sort-mode" value="descending" actions=<<action-rebuild-sorting-filters>>> Simple Descending</$radio>
 			<p class="ec_tl-muted">
 				Provide the field name by which to sort the task list items.
 			</p>
@@ -73,7 +77,7 @@ caption: Sorting
 	</tr>
 	<tr>
 		<td>
-			<$radio tiddler=<<tid>> field="tl-sort-mode" value="filter" actions=<<action-rebuild-sorting-filters>>>Custom filter</$radio>
+			<$radio tiddler=<<tid>> field="tl-sort-mode" value="filter" actions=<<action-rebuild-sorting-filters>>> Custom filter</$radio>
 			<p class="ec_tl-muted">
 				Provide a custom filter run or runs for sorting.
 			</p>
