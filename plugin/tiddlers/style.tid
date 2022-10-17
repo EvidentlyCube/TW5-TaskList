@@ -135,7 +135,7 @@ button.ec_tl-button svg {
 	text-decoration: line-through;
 }
 .ec_tl-task:hover {
-	background: rgb(128,128,256, 0.05);
+	outline: 1px solid rgb(0, 0, 0, 0.2);
 }
 .ec_tl-task:hover .ec_tl-button svg {
 	fill: <<colour tiddler-controls-foreground-hover>>;
