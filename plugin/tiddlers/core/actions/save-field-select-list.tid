@@ -1,4 +1,4 @@
-title: $:/plugins/EvidentlyCube/TaskList/Actions/core-save-field-select-data-list
+title: $:/plugins/EvidentlyCube/TaskList/Actions/core-save-field-select-list
 type: text/vnd.tiddlywiki
 
 <$action-setfield
