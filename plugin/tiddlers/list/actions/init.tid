@@ -3,7 +3,7 @@ type: text/vnd.tiddlywiki
 
 \define __action-initialize-new-list()
 	<$action-createtiddler
-		$basetitle={{{ [all[current]addsuffix[.edit]] }}}
+		$basetitle={{{ [<currentTiddler>addsuffix[.edit]] }}}
 		$overwrite="yes"
 		tags="TaskList"
 	>
@@ -25,7 +25,7 @@ type: text/vnd.tiddlywiki
 			/>
 		</$let>
 		<$action-createtiddler
-			$basetitle={{{ [<currentTiddler>addsuffix[/Field/Text.edit]] }}}
+			$basetitle={{{ [[$:/tasklist/]addsuffix<currentTiddler>addsuffix[/Field/Text.edit]] }}}
 			tags="TaskList/Field"
 			parent=<<createTiddler-title>>
 			priority=1
@@ -35,26 +35,26 @@ type: text/vnd.tiddlywiki
 			field-width="10"
 		/>
 		<$action-createtiddler
-			$basetitle={{{ [<currentTiddler>addsuffix[/Item]]  }}}
+			$basetitle={{{ [[$:/tasklist/]addsuffix<currentTiddler>addsuffix[/Item]] }}}
 			tags="TaskList/Item"
 			parent=<<currentTiddler>>
 			text="Make an apple pie"
 		/>
 		<$action-createtiddler
-			$basetitle={{{ [<currentTiddler>addsuffix[/Item]]  }}}
+			$basetitle={{{ [[$:/tasklist/]addsuffix<currentTiddler>addsuffix[/Item]] }}}
 			tags="TaskList/Item"
 			parent=<<currentTiddler>>
 			text="Buy groceries"
 		/>
 		<$action-createtiddler
-			$basetitle={{{ [<currentTiddler>addsuffix[/Item]]  }}}
+			$basetitle={{{ [[$:/tasklist/]addsuffix<currentTiddler>addsuffix[/Item]] }}}
 			tags="TaskList/Item"
 			parent=<<currentTiddler>>
 			text="Lookup the definition of 'scratch'"
 			_is-done="1"
 		/>
 		<$action-createtiddler
-			$basetitle={{{ [<currentTiddler>addsuffix[/Item]]  }}}
+			$basetitle={{{ [[$:/tasklist/]addsuffix<currentTiddler>addsuffix[/Item]] }}}
 			tags="TaskList/Item"
 			parent=<<currentTiddler>>
 			text="Invent the universe"

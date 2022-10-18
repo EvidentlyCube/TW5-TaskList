@@ -3,7 +3,7 @@ type: text/vnd.tiddlywiki
 
 \define action-save-item()
 	<$action-createtiddler
-		$basetitle={{{ [<tid-base>addsuffix[/Item]]  }}}
+		$basetitle={{{ [[$:/tasklist/]addsuffix<tid-base>addsuffix[/Item]] }}}
 		tags="TaskList/Item"
 		parent=<<tid-base>>
 	>
