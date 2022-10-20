@@ -1,7 +1,6 @@
 title: $:/plugins/EvidentlyCube/TaskList/Actions/core-save-field-text
 type: text/vnd.tiddlywiki
 
-<$action-log $$message="Saving text field" temp=<<temp>> to=<<item-tid>> field={{!!field-name}} value={{{ [<temp>get{!!field-name}] }}} />
 <$action-setfield
 	$tiddler=<<item-tid>>
 	$field={{!!field-name}}

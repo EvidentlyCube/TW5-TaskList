@@ -5,7 +5,6 @@ type: text/vnd.tiddlywiki
 	<$let item-tid=<<currentTiddler>>>
 		<$action-setfield _is-editing="0"/>
 		<$list filter="[all[tiddlers]tag[TaskList/Field]field:parent<tid>]">
-			<$action-log $$message="About to run save field" self=<<currentTiddler>> field={{!!field-type}}/>
 			<$transclude tiddler={{{ [[$:/plugins/EvidentlyCube/TaskList/Actions/core-save-field-]addsuffix{!!field-type}] }}}/>
 		</$list>
 	</$let>
