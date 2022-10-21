@@ -2,10 +2,13 @@ title: $:/plugins/EvidentlyCube/TaskList/builder-template-ui
 type: text/vnd.tiddlywiki
 caption: UI
 
-!! UI
+<h2>UI</h2>
 
 <p class="ec_tl-muted">
 	Customize various interface options.
 </p>
 
-* <$checkbox tiddler=<<tid>> field="tl-delete-checked" checked="1"> Show delete only on checked items.</$checkbox>
+
+<p>
+	<$checkbox tiddler=<<tid>> field="tl-delete-checked" checked="1"> Show delete only on checked items.</$checkbox>
+</p>

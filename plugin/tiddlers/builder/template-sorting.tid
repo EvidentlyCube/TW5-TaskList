@@ -51,7 +51,7 @@ caption: Sorting
 	</$let>
 \end
 
-!! Sorting
+<h2>Sorting</h2>
 
 <p class="ec_tl-muted">
 	In what order should the items in the task list appear?

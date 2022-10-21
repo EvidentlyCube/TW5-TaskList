@@ -29,7 +29,7 @@ type: text/vnd.tiddlywiki
 .ec_tl-builder-new-field {
 	border: 1px solid #EEE;
 	background: #F8F8F8;
-	padding: 0 1em;
+	padding: 0 1em 1em;
 	margin-bottom: 1em;
 	flex: 0 1 300px;
 }
@@ -153,4 +153,12 @@ button.ec_tl-button svg {
 
 .ec_tl-task-editing {
 	margin: 0.2em 0;
+}
+.ec_tl-preview {
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 0 1em;
+}
+.ec_tl-preview .ec_tl-container{
+    padding: 0 1em;
 }

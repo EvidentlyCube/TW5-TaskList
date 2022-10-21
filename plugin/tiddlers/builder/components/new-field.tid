@@ -1,22 +1,26 @@
 title: $:/plugins/EvidentlyCube/TaskList/Components/builder-new-field
 type: text/vnd.tiddlywiki
 
-!! Add a new field
+<h2>Add a new field</h2>
 
-''Caption:''
-<$edit-text
-	tiddler=<<temp>>
-	field="new-field-caption"
-	placeholder="Field name"
-/>
+<p>
+	''Caption:''
+	<$edit-text
+		tiddler=<<temp>>
+		field="new-field-caption"
+		placeholder="Field name"
+	/>
+</p>
 <p class="ec_tl-muted">How this field is displayed in the input list</p>
 
-''ID:''
-<$edit-text
-	tiddler=<<temp>>
-	field="new-field"
-	placeholder="Field Name"
-/>
+<p>
+	''ID:''
+	<$edit-text
+		tiddler=<<temp>>
+		field="new-field"
+		placeholder="Field Name"
+	/>
+</p>
 <p class="ec_tl-muted">Actual tiddler field name used to store this field</p>
 
 <$let

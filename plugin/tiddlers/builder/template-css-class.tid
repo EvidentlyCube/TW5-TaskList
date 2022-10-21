@@ -2,7 +2,7 @@ title: $:/plugins/EvidentlyCube/TaskList/builder-template-css-class
 type: text/vnd.tiddlywiki
 caption: CSS Class
 
-!! CSS Class
+<h2>CSS Class</h2>
 
 <p class="ec_tl-muted">
 	Do you want a certain CSS class to be applied to task items? Provide the filter that returns the class below.

@@ -2,7 +2,7 @@ title: $:/plugins/EvidentlyCube/TaskList/builder-template-fields
 type: text/vnd.tiddlywiki
 caption: Fields
 
-!! Fields editor
+<h2>Fields editor</h2>
 
 <p class="ec_tl-muted">
 	What fields do you want to have in this task list?
@@ -24,6 +24,5 @@ caption: Fields
 </table>
 
 <div class="ec_tl-builder-new-field">
-
 	{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
 </div>
