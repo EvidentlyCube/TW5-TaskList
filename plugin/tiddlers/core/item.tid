@@ -24,12 +24,14 @@ type: text/vnd.tiddlywiki
 	>
 		{{$:/core/images/edit-button}}
 	</$button>
-	<$button
-		class="tc-btn-invisible ec_tl-button"
-		tooltip="Delete this item"
-	>
-		<$action-deletetiddler $tiddler=<<currentTiddler>>/>
-		{{$:/core/images/close-button}}
-	</$button>
+	<$list filter="[<tid>field:tl-delete-checked[1]then[0]else[1]] [<currentTiddler>get[_is-done]then[1]else[0]] +[sum[]match[1]]" variable="ignore">
+		<$button
+			class="tc-btn-invisible ec_tl-button"
+			tooltip="Delete this item"
+		>
+			<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+			{{$:/core/images/close-button}}
+		</$button>
+	</$list>
 </div>
 </$let>

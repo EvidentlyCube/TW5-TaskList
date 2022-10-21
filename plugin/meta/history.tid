@@ -1,6 +1,7 @@
 title: $:/plugins/EvidentlyCube/TaskList/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.8'' -- Added UI options to builder; only show delete on checked options
 * ''1.0.7'' -- Added tooltips to all buttons
 * ''1.0.6'' -- Removed redundant logging actions + wrapped the task list in a div
 * ''1.0.5'' -- Fields and Items are now stored in `$:/tasklist/` prefixed tiddlers to not be available in search
