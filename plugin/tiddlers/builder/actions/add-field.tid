@@ -10,11 +10,13 @@ type: text/vnd.tiddlywiki
 		is-new-caption-empty={{{ [<new-field-caption>match[]then[1]else[0]] }}}
 		is-unique-field={{{ [all[tiddlers]tag[TaskList/Field]field:parent<tid>get[field-name]match<new-field>then[1]else[0]] }}}
 		is-field-title-used={{{ [<new-title>is[tiddler]then[1]else[0]] }}}
+		is-reserved-field={{{ [list[$:/plugins/EvidentlyCube/TaskList/Builder/reserved-fields]match<new-field>then[1]else[0]] }}}
 		error-count={{{
-			[<is-new-field-empty>!match[0]]
-			[<is-new-caption-empty>!match[0]]
-			[<is-unique-field>!match[0]]
-			[<is-field-title-used>!match[0]]
+			[<is-new-field-empty>match[1]]
+			=[<is-new-caption-empty>match[1]]
+			=[<is-unique-field>match[1]]
+			=[<is-field-title-used>match[1]]
+			=[<is-reserved-field>match[1]]
 
 			+[count[]]
 		}}}
