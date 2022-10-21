@@ -17,11 +17,19 @@ type: text/vnd.tiddlywiki
 
 		{{||$:/plugins/EvidentlyCube/TaskList/core-input-fields}}
 
-		<$button class="tc-btn-invisible ec_tl-button" actions=<<action-cancel-item-edit>>>
+		<$button
+			class="tc-btn-invisible ec_tl-button"
+			actions=<<action-cancel-item-edit>>
+			tooltip="Cancel changes"
+		>
 			<$action-setfield _is-editing="0"/>
 			{{$:/core/images/cancel-button}}
 		</$button>
-		<$button class="tc-btn-invisible ec_tl-button" actions=<<action-save-edited-item>>>
+		<$button
+			class="tc-btn-invisible ec_tl-button"
+			actions=<<action-save-edited-item>>
+			tooltip="Save changes"
+		>
 			{{$:/core/images/done-button}}
 		</$button>
 	</$keyboard>

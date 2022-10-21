@@ -8,12 +8,14 @@ type: text/vnd.tiddlywiki
 		<$button
 			class="tc-btn-invisible ec_tl-button"
 			actions=<<action-save-item>>
+			tooltip="Add this item to the Task List"
 		>
 			{{$:/core/images/new-button}}
 		</$button>
 		<$button
 			class="tc-btn-invisible ec_tl-button"
 			actions=<<action-start-tasklist-edit>>
+			tooltip="Configure this Task List"
 		>
 			{{$:/core/images/options-button}}
 		</$button>

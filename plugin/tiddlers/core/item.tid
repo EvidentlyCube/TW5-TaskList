@@ -17,10 +17,17 @@ type: text/vnd.tiddlywiki
 	</div>
 
 	<div style="flex-grow: 1"></div>
-	<$button class="tc-btn-invisible ec_tl-button" actions=<<action-start-item-edit>>>
+	<$button
+		class="tc-btn-invisible ec_tl-button"
+		actions=<<action-start-item-edit>>
+		tooltip="Edit this item"
+	>
 		{{$:/core/images/edit-button}}
 	</$button>
-	<$button class="tc-btn-invisible ec_tl-button">
+	<$button
+		class="tc-btn-invisible ec_tl-button"
+		tooltip="Delete this item"
+	>
 		<$action-deletetiddler $tiddler=<<currentTiddler>>/>
 		{{$:/core/images/close-button}}
 	</$button>

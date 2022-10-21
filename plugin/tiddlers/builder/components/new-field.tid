@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 	field="new-field-caption"
 	placeholder="Field name"
 />
-<br>
+<p class="ec_tl-muted">How this field is displayed in the input list</p>
 
 ''ID:''
 <$edit-text
@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 	field="new-field"
 	placeholder="Field Name"
 />
-<br>
+<p class="ec_tl-muted">Actual tiddler field name used to store this field</p>
 
 <$let
 	new-field={{{ [<temp>get[new-field]] }}}
