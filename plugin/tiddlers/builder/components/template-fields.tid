@@ -23,6 +23,4 @@ caption: Fields
 </tbody>
 </table>
 
-<div class="ec_tl-builder-new-field">
-	{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}
-</div>
+{{||$:/plugins/EvidentlyCube/TaskList/Components/builder-new-field}}

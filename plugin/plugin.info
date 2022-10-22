@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/EvidentlyCube/TaskList",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "core-version": ">=5.2.3",
     "description": "A powerful, customizable and reusable todo list.",
     "author": "Maurycy Zarzycki",
