@@ -10,3 +10,11 @@ caption: CSS Class
 </p>
 
 <$edit-text tiddler=<<tid>> tag="textarea" class="ec_tl-template-edit" field="tl-class-filter"/>
+
+<$list filter={{{ [<tid>get[tl-class-filter]] }}}>
+	<p class="ec_tl-error">
+		<$list filter={{{ [<currentTiddler>prefix[Filter error]]}}}>
+			<<currentTiddler>>
+		</$list>
+	</p>
+</$list>
