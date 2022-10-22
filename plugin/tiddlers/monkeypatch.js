@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/EvidentlyCube/TaskList/cleanup.js
+title: $:/plugins/EvidentlyCube/TaskList/monkeypatch.js
 type: application/javascript
 module-type: startup
 
@@ -20,7 +20,6 @@ exports.after = ["windows"];
 exports.synchronous = true;
 
 exports.startup = function() {
-
 	var version = $tw.version.split('.');
 	if ($tw.node || version[0] > 5 || version[1] > 2 || version[1] > 3) {
 		return;
