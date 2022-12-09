@@ -4,8 +4,8 @@
 
 A very powerful Task List/Todo plugin where you can customize almost any aspect of it:
  * Define your own fields
-    * Simple text input fields
-    * Select powered by Data tiddlers or list fields
+	* Simple text input fields
+	* Select powered by Data tiddlers or list fields
  * How the list items are displayed
  * Sorting
  * CSS class applied to each element

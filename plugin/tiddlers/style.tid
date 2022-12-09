@@ -155,10 +155,10 @@ button.ec_tl-button svg {
 	margin: 0.2em 0;
 }
 .ec_tl-preview {
-    border: 1px solid black;
-    border-radius: 1em;
-    padding: 0 1em;
+	border: 1px solid black;
+	border-radius: 1em;
+	padding: 0 1em;
 }
 .ec_tl-preview .ec_tl-container{
-    padding: 0 1em;
+	padding: 0 1em;
 }
