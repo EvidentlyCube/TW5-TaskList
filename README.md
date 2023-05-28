@@ -1,6 +1,8 @@
 # Task List [TiddlyWiki5 Plugin]
 
-! Features
+> :warning: **This repository has been moved**: To make development easier this plugin's code was moved to [EvidentlyCube/TW5-PluginShowcase](https://github.com/EvidentlyCube/TW5-PluginShowcase/tree/main), specifically [here](https://github.com/EvidentlyCube/TW5-PluginShowcase/tree/main/plugins/EvidentlyCube/TW5-TaskList) .
+
+## Features
 
 A very powerful Task List/Todo plugin where you can customize almost any aspect of it:
  * Define your own fields
